@@ -37,8 +37,8 @@
     <Folder Include="Scripts\" />
   </ItemGroup>
 
-  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+  <!--<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Exec Command="npx minify ./Scripts/app.js &gt; ./wwwroot/app.min.js" ContinueOnError="false" />
-  </Target>
+  </Target>-->
 
 </Project>

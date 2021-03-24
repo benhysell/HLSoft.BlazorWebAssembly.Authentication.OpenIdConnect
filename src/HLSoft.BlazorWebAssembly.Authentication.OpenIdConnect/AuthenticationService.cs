@@ -36,7 +36,7 @@ namespace HLSoft.BlazorWebAssembly.Authentication.OpenIdConnect
 		{
 			try
 			{
-				await Utils.SetSessionStorageData(_jsRuntime, "_returnUrl", _navigationManager.Uri);
+				//await Utils.SetSessionStorageData(_jsRuntime, "_returnUrl", _navigationManager.Uri);
 				await _jsRuntime.InvokeVoidAsync(Constants.SigninRedirect);
 			}
 			catch (Exception err)

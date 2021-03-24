@@ -11,6 +11,9 @@
 		/// Returns promise to trigger a redirect of the current window to the end session endpoint.
 		/// </summary>
 		public const string SignoutRedirect = JavascriptPrefix + "signoutRedirect";
+
+		public const string SignoutRedirectAutomaticTimeout = JavascriptPrefix + "signoutRedirectAutomaticTimeout";
+
 		/// <summary>
 		/// Returns promise to load the User object for the currently authenticated user.
 		/// </summary>

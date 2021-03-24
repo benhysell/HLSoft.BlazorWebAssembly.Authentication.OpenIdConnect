@@ -72,6 +72,19 @@ namespace HLSoft.BlazorWebAssembly.Authentication.OpenIdConnect
 			}
 		}
 
+		public async Task SignOutTimeOutRedirectAsync()
+		{
+			try
+			{
+				await _jsRuntime.InvokeVoidAsync(Constants.SignoutRedirectAutomaticTimeout);
+				await Utils.SetSessionStorageData(_jsRuntime, "_previousActionCode", Constants.SignedOutSuccess);
+			}
+			catch (Exception err)
+			{
+				_authenticationEventHandler.NotifySignOutFail(err);
+			}
+		}
+
 		public async Task SignOutPopupAsync()
 		{
 			try

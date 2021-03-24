@@ -35,6 +35,10 @@
 		return mgr.signoutRedirect();
 	}
 
+	window.HLSoftBlazorWebAssemblyAuthenticationOpenIdConnect.signoutRedirectAutomaticTimeout = function () {
+		return mgr.signoutRedirect({ extraQueryParams: { 'automaticSignout': 'true' } });
+	}
+
 	window.HLSoftBlazorWebAssemblyAuthenticationOpenIdConnect.getUser = function () {
 		return mgr ? mgr.getUser() : null;
 	}

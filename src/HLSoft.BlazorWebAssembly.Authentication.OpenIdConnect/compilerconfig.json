@@ -1,0 +1,7 @@
+﻿[
+  {
+    "inputFile": "Scripts/app.js",
+    "outputFile": "wwwroot/app.min.js"
+
+  }
+]

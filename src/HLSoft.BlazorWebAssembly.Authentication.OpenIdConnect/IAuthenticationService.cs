@@ -15,6 +15,11 @@ namespace HLSoft.BlazorWebAssembly.Authentication.OpenIdConnect
 		Task SignOutAsync();
 
 		/// <summary>
+		/// Sign out and automatically redirect back to site with notice auto signout initiated 
+		/// </summary>
+		Task SignOutTimeOutRedirectAsync();
+
+		/// <summary>
 		/// Request to start the popup login process, will show s popup to do the authorization
 		/// </summary>
 		Task SignInPopupAsync();

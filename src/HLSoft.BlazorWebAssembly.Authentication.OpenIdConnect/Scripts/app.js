@@ -19,7 +19,8 @@
 			// subscribe SilentRenewError event
 			mgr.events.addSilentRenewError(notifySilentRenewError);
 			mgr.events.addUserSignedOut(() => {
-				mgr.signoutRedirect();					
+				//mgr.signoutRedirect();					
+				window.location.href = "/";
 			});
 			// if there is a custom endSessionEndpoint, hack the Oidc.UserManager to use that url as the session endpoint
 			if (config.endSessionEndpoint) {

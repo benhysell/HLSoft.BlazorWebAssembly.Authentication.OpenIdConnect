@@ -18,6 +18,9 @@
 			mgr = new Oidc.UserManager(prepareOidcConfig(config));
 			// subscribe SilentRenewError event
 			mgr.events.addSilentRenewError(notifySilentRenewError);
+			mgr.events.addUserSignedOut(() => {
+				mgr.signoutRedirect();					
+			});
 			// if there is a custom endSessionEndpoint, hack the Oidc.UserManager to use that url as the session endpoint
 			if (config.endSessionEndpoint) {
 				mgr.metadataService.getEndSessionEndpoint = function () {

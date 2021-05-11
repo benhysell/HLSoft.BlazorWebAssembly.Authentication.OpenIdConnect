@@ -4,6 +4,12 @@ namespace HLSoft.BlazorWebAssembly.Authentication.OpenIdConnect
 {
 	public interface IAuthenticationService
 	{
+
+		/// <summary>
+		/// Request to start the redirect login process, will trigger a redirect of the current window to the authorization endpoint
+		/// </summary>
+		Task SignInSilentAsync();
+
 		/// <summary>
 		/// Request to start the redirect login process, will trigger a redirect of the current window to the authorization endpoint
 		/// </summary>

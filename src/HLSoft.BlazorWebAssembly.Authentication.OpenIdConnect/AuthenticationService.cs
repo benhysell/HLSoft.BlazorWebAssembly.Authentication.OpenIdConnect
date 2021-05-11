@@ -45,6 +45,23 @@ namespace HLSoft.BlazorWebAssembly.Authentication.OpenIdConnect
 			}
 		}
 
+		/// <summary>
+		/// trigger a sign in silent
+		/// </summary>
+		/// <returns></returns>
+		public async Task SignInSilentAsync()
+		{
+			try
+			{
+				//await Utils.SetSessionStorageData(_jsRuntime, "_returnUrl", _navigationManager.Uri);
+				await _jsRuntime.InvokeVoidAsync(Constants.SigninSilent);
+			}
+			catch (Exception err)
+			{
+				_authenticationEventHandler.NotifySignInFail(err);
+			}
+		}
+
 		public async Task SignInPopupAsync()
 		{
 			try

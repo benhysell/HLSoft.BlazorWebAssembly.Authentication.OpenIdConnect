@@ -18,10 +18,11 @@
 			mgr = new Oidc.UserManager(prepareOidcConfig(config));
 			// subscribe SilentRenewError event
 			mgr.events.addSilentRenewError(notifySilentRenewError);
-			mgr.events.addUserSignedOut(() => {
-				mgr.signoutRedirect();					
-				//window.location.href = "/";
-			});
+			//mgr.events.addUserSignedOut(() => {
+			//	Note: if one would like the tab to sign out when user signs out uncomment 
+			//mgr.signoutRedirect();
+			//	//window.location.href = "/";
+			//});
 			// if there is a custom endSessionEndpoint, hack the Oidc.UserManager to use that url as the session endpoint
 			if (config.endSessionEndpoint) {
 				mgr.metadataService.getEndSessionEndpoint = function () {

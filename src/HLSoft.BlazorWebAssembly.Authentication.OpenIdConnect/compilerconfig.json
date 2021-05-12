@@ -1,6 +1,6 @@
 ﻿[
   {
-    "outputFile": "wwwroot/appV1.min.js",
-    "inputFile": "Scripts/appV1.js"
+    "outputFile": "wwwroot/app.min.js",
+    "inputFile": "Scripts/app.js"
   }
 ]

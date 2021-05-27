@@ -194,7 +194,8 @@ namespace HLSoft.BlazorWebAssembly.Authentication.OpenIdConnect
 
 		public async Task SetAuthorizationHeader(HttpClient httpClient, string tokenName = "access_token")
 		{
-			if (httpClient.DefaultRequestHeaders.Authorization != null) return;
+			//always get token from storage on every request
+			//if (httpClient.DefaultRequestHeaders.Authorization != null) return;
 			var authState = await GetAuthenticationStateAsync();
 			var token = authState.GetClaim(tokenName);
 			if (!string.IsNullOrEmpty(token))
